@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 					count += print_int(args);
 					break;
 				case 'u':
-					count += print_unsigned_int(args);
+					count += print_unsigned(args);
 					break;
 				case 'o':
 					count += print_octal(args);
