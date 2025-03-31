@@ -5,7 +5,6 @@
  * @args: argument list
  * Return: number of characters printed
  */
-
 int print_int(va_list args)
 {
 	int n = va_arg(args, int);
@@ -26,20 +25,20 @@ int print_int(va_list args)
 	{
 		num = (unsigned int)n;
 	}
-	
+
 	do {
 		buffer[i++] = (num % 10) + '0';
 		num /= 10;
 	} while (num);
 
 	while (i--)
+
 		count += write(1, &buffer[i], 1);
-	
 	return (count);
 }
 /**
  * print_unsigned - prints unsigned interger
- * @agrs: argument list
+ * @args: argument list
  * Return: number of characters printed
  */
 int print_unsigned(va_list args)
@@ -49,7 +48,7 @@ int print_unsigned(va_list args)
 	int i = 0;
 	int count = 0;
 
-	do { 
+	do {
 		buffer[i++] = (num % 10) + '0';
 		num /= 10;
 
