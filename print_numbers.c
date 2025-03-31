@@ -8,18 +8,21 @@
 
 int print_int(va_list args)
 {
-	int = va_arg(args, int);
+	int n = va_arg(args, int);
 	unsigned int num;
 	char buffer[12];
-	int i = 0, count = 0;
+	int i = 0;
+	int count = 0;
 
 	if (n < 0)
 	{
 		count += write(1, "-", 1);
-		num = -n;
+		num = (unsigned int)(-n);
 	}
-	else 
-		num = n;
+	else
+	{
+		num = (unsigned int)n;
+	}
 	
 	do {
 		buffer[i++] = (num % 10) + '0';
@@ -30,6 +33,7 @@ int print_int(va_list args)
 		count += write(1, &buffer[i], 1);
 	
 	return (count);
+}
 /**
  * print_unsigned - prints unsigned interger
  * @agrs: argument list
@@ -39,7 +43,8 @@ int print_unsigned(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char buffer[20];
-	int i = 0, count = 0;
+	int i = 0;
+	int count = 0;
 
 	do { 
 		buffer[i++] = (num % 10) + '0';
@@ -63,7 +68,8 @@ int print_octal(va_list args)
 {
 	unsigned int num = va_arg(args, unsigned int);
 	char buffer[20];
-	int i = 0; count = 0;
+	int i = 0;
+	int count = 0;
 
 	do {
 		buffer[i++] = (num % 8) + '0';
