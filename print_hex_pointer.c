@@ -17,7 +17,9 @@ int print_hex(va_list args, int uppercase)
 
 	do {
 		int digit = num % 16;
+
 		if (digit < 10)
+
 			hex = digit + '0';
 		else
 			hex = digit - 10 + (uppercase ? 'A' : 'a');
@@ -52,7 +54,9 @@ int print_pointer(va_list args)
 	while (ptr)
 	{
 		int digit = ptr % 16;
+
 		if (digit < 10)
+
 			hex = digit + '0';
 		else
 			hex = digit - 10 + 'a';

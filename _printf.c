@@ -14,7 +14,7 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int count = 0;
 
-	if (format == NULL)
+	if (format == NULL || (format[0] == '%' && !format[1]))
 	{
 		return (-1);
 	}
@@ -39,7 +39,7 @@ int _printf(const char *format, ...)
 					count += print_int(args);
 					break;
 				case 'u':
-					count += print_unsigned(args);
+					count += print_unsigned_int(args);
 					break;
 				case 'o':
 					count += print_octal(args);
