@@ -14,12 +14,14 @@ int _printf(const char *format, ...)
 	int i = 0;
 	int count = 0;
 
-	if (!format)
+	if (format == NULL)
+	{
 		return (-1);
+	}
 
 	va_start(args, format);
 
-	while (format[i])
+	while (format && format[i] != '\0')
 	{
 		if (format [i] == '%' && format[i + 1])
 		{
