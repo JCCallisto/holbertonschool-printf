@@ -53,7 +53,7 @@ int _printf(const char *format, ...)
 				case 'p':
 					count += print_pointer(args);
 					break;
-				case '%':
+				case '%%':
 					count += write(1, "%", 1);
 					break;
 				default:
