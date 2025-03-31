@@ -23,7 +23,7 @@ int _printf(const char *format, ...)
 
 	while (format && format[i] != '\0')
 	{
-		if (format [i] == '%' && format[i + 1])
+		if (format[i] == '%' && format[i + 1])
 		{
 			i++;
 			switch (format[i])

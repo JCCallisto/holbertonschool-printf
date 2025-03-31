@@ -15,11 +15,14 @@ int print_int(va_list args)
 	int count = 0;
 
 	if (n < 0)
+
 	{
 		count += write(1, "-", 1);
 		num = (unsigned int)(-n);
 	}
+
 	else
+
 	{
 		num = (unsigned int)n;
 	}
