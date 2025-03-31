@@ -1,41 +1,23 @@
-.TH _print 3 "My own function Library"
+.TH _PRINTF 3 "March 2025""Holberton School""Printf Manual"
 
-.SH NAME 
-
-.SH 
-.ce 
-.B _printf Project 2025
-
-.ce
-.B My version of _printf for formatted text output.
+.SH NAME
+_printf(3)
 
 
 .SH SYNOPSIS
-
-
-
+.B This is the function call, it is used for printing formatted output. It starts with a format string, which ncludes regular text %i, numbers %o & special characters %r. A format string/variable number containing arguments that fills the place holder and will print to the screen output
+.PP
 .B int _printf(const char *format, ..)
-
-
 
 .B This is the function call, it is used for printing formatted output. It starts with a format string, which ncludes regular text %i, numbers %o & special characters %r. A format string/variable number containing arguments that fills the place holder and will print to the screen output.
 
 
-
-
-.SH DESCRIPTION -> **Custom version of _printf with standard functions built into it. 
-
-
-
-
+.SH DESCRIPTION ->
+Custom version of _printf with standard functions built into it.
+.PP
 .B Named my_printf, this version as it's parent reads the format string, dicerns data and prints it to the screen. Starts with va_start which opens a list, accesses the stored memory, then each value is obtained through va_arg. Both come from the library <stdarg.h>, that lets the functions handle any number of arguments.
 
-
-
-
-.SH --Once the value are pulled in my_printf uses format specifiers:
-
-
+.SH FORMAT SPECIFIERS
 .TP
 .B → %c
 Prints a single character (letter or symbol).
@@ -75,54 +57,32 @@ Literal percent sign, prints a percent sign. Since % is a special character in f
 
 .SH FILES
 .B Project is organized by files for modularity, 
-
 .PP
-	.B  _printf.c 
+.B  _printf.c 
 
- Is the boss(dispatcher), this is the main controller of the operation. Uses switch-case for clean and organized way of checking a match for values and characters. It is also an easier way of applying new specifiers.
-
+Is the boss(dispatcher), this is the main controller of the operation. Uses switch-case for clean and organized way of checking a match for values and characters. It is also an easier way of applying new specifiers.
 .PP
+.B  main.h 
 
-	.B  main.h 
-
- This is the header file, it is a log of what tools are accesable and what is int place to work and be applied through expected parameters.
-
+This is the header file, it is a log of what tools are accesable and what is int place to work and be applied through expected parameters.
 .PP
-
-	.B print_text.c
+.B print_text.c
 
 This file contains 3 functions, it prints characters %c, strings %s and deals with weird inputs %r.
-
 .PP
 
-	.B print_numbers.c 
+.B print_numbers.c 
 
 This file has the function to print different types of numbers, like int %d %i, unsigned %u and octal %o.
-
 .PP
-	.B print_hex_pointers.c
+.B print_hex_pointers.c
 
 This file prints hexadecimal numbers (base 16 numbers) Using (args, 0) to call lowercase %x, (args, 1) to call UPPERCASE %X. It also handles memory addresses %p.
 
 
 .SH BUGS 
-
 Unknown specifiers like %r or %k are printed as-is.
 Null strings passed to %s are printed as (null).
 
 .B *Does not have the features to handle flags, width, precision or length modifiers.
 
-
-.SH AUTHOR 
-
-.ce
-.B GERALD F. D. MULERO
-
-
-.ce
-.B Holberton school - _printf Project
-
-.ce
-.B March 2025
-
-.SH THANK YOU, World!
