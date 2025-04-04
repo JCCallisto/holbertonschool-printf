@@ -37,6 +37,5 @@ int print_octal(va_list args);
 
 int print_hex(va_list args, int uppercase);
 int print_pointer(va_list args);
->>>>>>> 76506c3a994ab86e92f6c38a4623614093a40c08
 
 #endif
