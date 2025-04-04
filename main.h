@@ -1,36 +1,42 @@
-#ifndef _MAIN_H
-#define _MAIN_H
+#ifndef MAIN_H
+#define MAIN_H
 
 #include <stdarg.h>
 #include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-#include <stddef.h>
-#include <wchar.h>
 
-typedef void (*callback)(int);
+/**
+ * struct format_specifier - Links a format code, the handler function
+ * @specifier: Represents the format specifier
+ * @handler: Pointer to the specifier
+ * _printf: _printf function
+ * print_char: Prints a single character
+ * print_string: Prints a string
+ * print_int: Prints a signed interger, -negative or +positive
+ * print_unsigned: Prints an usnigned interger
+ * print_octal: Prints a number in octal (base 8)
+ * print_hex: Prints a number in hexadecimal (base 16)
+ * print_pointer: Prints memory address
+ * @format: format string that constains the characters and specifiers
+ * Return: number of characters printed
+ */
 
-typedef struct
+typedef struct format_specifier
 {
-        char *s;
-        int c;
-        int num;
-        unsigned int x;
-        unsigned int X;
-        unsigned int o;
-        unsigned int u;
-        wchar_t *wstr;
-        callback cb;
-}My_specifier;
+	char specifier;
+	int (*handler)(va_list);
+} format_specifier_t;
 
-int _putchar(char c);
 int _printf(const char *format, ...);
-int _printf1(const char *format, ...);
-int _printf2(const char *format, ...);
-int _printf3(const char *format, ...);
-void print_hex(unsigned int num, int uppercase);
-void my_callback(int value);
-void print_my_specifier(My_specifier *specifier);
-void print_binary(unsigned int n);
+
+int print_char(va_list args);
+int print_string(va_list args);
+
+int print_int(va_list args);
+int print_unsigned(va_list args);
+int print_octal(va_list args);
+
+int print_hex(va_list args, int uppercase);
+int print_pointer(va_list args);
+>>>>>>> 76506c3a994ab86e92f6c38a4623614093a40c08
 
 #endif
