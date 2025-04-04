@@ -31,5 +31,6 @@ int _printf3(const char *format, ...);
 void print_hex(unsigned int num, int uppercase);
 void my_callback(int value);
 void print_my_specifier(My_specifier *specifier);
+void print_binary(unsigned int n);
 
 #endif
